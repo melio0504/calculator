@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --prmary-font-style: ;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    font-family: var(--secondary-font-style);
+     position: fixed;
+     bottom: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 0.8rem;
+     width: 100%;
+     padding: 1.265rem;
+     background-color: var(--secondary-color);
+     color: var(--font-light);
+}
+ 
+ .github-logo {
+     width: 30px;
+     height: 30px;
+}
