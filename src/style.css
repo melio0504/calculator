@@ -5,29 +5,62 @@
 }
 
 :root {
-    --prmary-font-style: ;
+    --font-style: "Roboto Mono", monospace;
+    --font-color: #fbfafb;
+    --background-color: #080010;
+    --calculator-bg-color: #36454F;
+    --output-bg-color: #389844;
+    --calculator-clear-color: #520002; 
 }
 
 body {
     padding: 0;
     margin: 0;
+    font-family: var(--font-style);
+    background: var(--background-color);
+    color: var(--font-color);
 }
 
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    align-items: center;
+    background: var(--calculator-bg-color);
+    padding: 1rem;
+    width: 80vh;
+    height: 80vh;
+    margin: 1rem auto;
+}
+
+.output {
+    background: var(--output-bg-color);
+    width: 100%;
+    padding: 1rem;
+}
+
+button {
+    padding: 1rem 2rem;
+}
+
+/* Use CSS Grid on Buttons */
+
 footer {
-    font-family: var(--secondary-font-style);
-     position: fixed;
-     bottom: 0;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 0.8rem;
-     width: 100%;
-     padding: 1.265rem;
-     background-color: var(--secondary-color);
-     color: var(--font-light);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
  
- .github-logo {
-     width: 30px;
-     height: 30px;
+.github-logo {
+    width: 30px;
+    height: 30px;
 }
