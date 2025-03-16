@@ -79,10 +79,28 @@ body {
 button:hover {
     border-color: #646cff;
 }
-  
 
+@media only screen and (max-width: 400px) {
+    .calculator {
+        margin-top: 6rem;
+    }
+    
+    .calculator-output {
+        font-size: 2rem;
+    }
+
+    .calculator-key {
+        font-size: 1rem;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+    }
+}
+  
 footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
