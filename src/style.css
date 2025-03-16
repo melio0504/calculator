@@ -22,26 +22,48 @@ body {
 }
 
 .calculator {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 1rem;
+    display: grid;
+    justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0 1rem 1rem 1rem;
+    overflow: hidden;
     background: var(--calculator-bg-color);
-    padding: 1rem;
-    width: 80vh;
-    height: 80vh;
-    margin: 1rem auto;
 }
 
-.output {
+.calculator-output {    
     background: var(--output-bg-color);
-    width: 100%;
-    padding: 1rem;
+    margin: 0 0 1rem 0;
+    padding-block-start: 0.25rem;
+    padding-block-end: 0.25rem;
+    padding-inline-end: 0.75rem; 
 }
 
-button {
-    padding: 1rem 2rem;
+.output-display {
+    font-size: 3.5rem;
+    text-align: end;
+}
+
+.calculator-keys {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator-key {
+    font-size: 3rem;
+    border-radius: 15px;
+}
+
+.calculator-key-operator {
+
+}
+
+.calculator-key-operator-big {
+    grid-column: 4 / 5;
+    grid-row: 3 / span 2;
 }
 
 /* Use CSS Grid on Buttons */
