@@ -23,7 +23,7 @@ body {
 }
 
 .calculator {
-    width: fit-content;
+    width: 50vh;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
