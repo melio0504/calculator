@@ -22,7 +22,7 @@ body {
     color: var(--font-color);
 }
 
-.calculator {
+.calculator { 
     width: 50vh;
     justify-content: center;
     align-items: center;
@@ -83,6 +83,11 @@ button:hover {
 @media only screen and (max-width: 400px) {
     .calculator {
         margin-top: 6rem;
+        width: 40vh;
+    }
+
+    .calculator-title {
+        font-size: 0.8rem;
     }
     
     .calculator-output {
@@ -90,7 +95,7 @@ button:hover {
     }
 
     .calculator-key {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     footer {
