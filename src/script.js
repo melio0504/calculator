@@ -1,49 +1,45 @@
-const outputDisplay = document.querySelector('#currentDisplay');
-const allClear = document.querySelector('#allClear');
-const clear = document.querySelector('#clear');
-
-allClear.addEventListener('click', () => AllClear);
-clear.addEventListener('click', () => Clear);
-
-function AllClear() {
-    console.log("Hello");
+function add(num1, num2) {
+    return roundingNumber(num1 + num2);    
 }
 
-function Clear() {
-
+function subtract(num1, num2) {
+    return roundingNumber(num1 - num2);
 }
 
-// Main functions for basic math
-function add(x, y) {
-    return x + y;    
+function multiply(num1, num2) {
+    return roundingNumber(num1 * num2);
 }
 
-function subtract(x, y) {
-    return x - y;
+function divide(num1, num2) {
+    return roundingNumber(num1 / num2);
 }
 
-function multiply(x, y) {
-    return x * y;
+function operate(operator, num1, num2) {
+    switch (operator) {
+        case '+':
+            return add(num1, num2);
+            break;
+        case '-':
+            return subtract(num1, num2);
+            break;
+        case '*':
+            return multiply(num1, num2);
+            break;
+        case '/':
+            if (num2 === 0) {
+                return 'Error';
+            }
+            return divide(num1, num2);
+            break;
+    }
 }
 
-function divide(x, y) {
-    return x / y;
+function roundingNumber(num) {
+    const roundLength = 1000000;
+
+    if (!Number.isInteger(num)) {
+        return Math.round((num + Number.EPSILON) * roundLength) / roundLength;
+    }
+
+    return num;
 }
-
-// function operate(operator, x, y) {
-//     x = Number(x)
-//     y = Number(y)
-
-//     switch (operator) {
-//         case '+':
-//             return add(x, y)
-//         case '−':
-//             return substract(x, y)
-//         case '×':
-//             return multiply(x, y)
-//         case '÷':
-//             if (b === 0) return null
-//                 else return divide(a, b)
-//         default:
-//             return null
-// }
