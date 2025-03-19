@@ -84,7 +84,10 @@ button:hover {
     border-color: #646cff;
 }
 
-@media only screen and (max-width: 400px) {
+
+/* Fix this for max height please */
+@media only screen and (max-width: 400px),
+    screen and (max-height: 500px) {
     .calculator {
         margin-top: 6rem;
         width: 40vh;
