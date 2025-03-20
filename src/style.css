@@ -84,10 +84,7 @@ button:hover {
     border-color: #646cff;
 }
 
-
-/* Fix this for max height please */
-@media only screen and (max-width: 400px),
-    screen and (max-height: 500px) {
+@media only screen and (max-width: 400px) {
     .calculator {
         margin-top: 6rem;
         width: 40vh;
@@ -103,12 +100,6 @@ button:hover {
 
     .calculator-key {
         font-size: 1.5rem;
-    }
-
-    footer {
-        position: fixed;
-        left: 0;
-        width: 100%;
     }
 }
   
