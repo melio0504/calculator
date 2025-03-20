@@ -34,6 +34,7 @@ function operate(operator, num1, num2) {
     }
 }
 
+// This automatically round the number after doing the main operation.
 function roundingNumber(num) {
     const roundLength = 1000000;
 
@@ -43,3 +44,11 @@ function roundingNumber(num) {
 
     return num;
 }
+
+let firstNum = 0;
+let secondNum = 0;
+let outputDisplay = '';
+
+const display = document.querySelector('#currentDisplay')
+
+// Find a way to create an EventListener that when the user clicked a specific button it will append in the outputDisplay
