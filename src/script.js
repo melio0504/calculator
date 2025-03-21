@@ -66,6 +66,10 @@ function handleInput(value) {
             outputDisplay = firstNum;
         }
     } else if (['+', '-', '*', '/'].includes(value)) {
+        if (!firstNum) {
+            firstNum = '0';
+        }
+
         if (firstNum && secondNum) {
             firstNum = operate(operator, parseFloat(firstNum), parseFloat(secondNum)).toString();
             secondNum = '';
