@@ -40,3 +40,71 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => handleInput(button.value));
 });
+
+let isResultDisplayed = false;
+
+function handleInput(value) {
+    if (!isNaN(value) || value === '.') {
+        if (isResultDisplayed) { 
+            firstNum = ''; 
+            isResultDisplayed = false; 
+        }
+
+        if (value === '.') {
+            if (operator) {
+                if (secondNum.includes('.')) return;
+            } else {
+                if (firstNum.includes('.')) return;
+            }
+        }
+
+        if (operator) {
+            secondNum += value;
+            outputDisplay = secondNum;
+        } else {
+            firstNum += value;
+            outputDisplay = firstNum;
+        }
+    } else if (['+', '-', '*', '/'].includes(value)) {
+        if (firstNum && secondNum) {
+            firstNum = operate(operator, parseFloat(firstNum), parseFloat(secondNum)).toString();
+            secondNum = '';
+        }
+        operator = value;
+        outputDisplay = firstNum;
+        isResultDisplayed = false;
+    } else if (value === '=' && firstNum && secondNum) {
+        firstNum = operate(operator, parseFloat(firstNum), parseFloat(secondNum)).toString();
+        operator = '';
+        secondNum = '';
+        outputDisplay = firstNum;
+        isResultDisplayed = true;
+    } 
+    
+    else if (value === 'AC') {
+        firstNum = '';
+        secondNum = '';
+        operator = '';
+        outputDisplay = '0';
+        isResultDisplayed = false;
+    } 
+    
+    else if (value === 'C') {
+        if (secondNum) {
+            secondNum = secondNum.slice(0, -1);
+            outputDisplay = secondNum || '0';
+        } else if (operator) {
+            operator = '';
+        } else if (firstNum) {
+            firstNum = firstNum.slice(0, -1);
+            outputDisplay = firstNum || '0';
+        }
+    }
+
+    updateDisplay();
+}
+
+function updateDisplay() {
+    display.textContent = outputDisplay;
+    display.scrollRight = 0;
+}
