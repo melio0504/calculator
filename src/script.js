@@ -28,3 +28,15 @@ function operate(operator, num1, num2) {
 function roundingNumber(num) {
     return Number.isInteger(num) ? num : parseFloat(num.toFixed(6));
 }
+
+let firstNum = '';
+let secondNum = '';
+let operator = '';
+let outputDisplay = '0';
+
+const display = document.querySelector('#currentDisplay');
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => handleInput(button.value));
+});
