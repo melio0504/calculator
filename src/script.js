@@ -53,8 +53,10 @@ function handleInput(value) {
         if (value === '.') {
             if (operator) {
                 if (secondNum.includes('.')) return;
+                if (secondNum === '') secondNum = '0';
             } else {
                 if (firstNum.includes('.')) return;
+                if (firstNum === '') firstNum = '0';
             }
         }
 
