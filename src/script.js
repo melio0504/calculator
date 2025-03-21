@@ -108,3 +108,21 @@ function updateDisplay() {
     display.textContent = outputDisplay;
     display.scrollRight = 0;
 }
+
+document.addEventListener('keydown', (e) => {
+    const keyMap = {
+        '/': '/',
+        '*': '*',
+        '-': '-',
+        '+': '+',
+        Enter: '=',
+        '=': '=',
+        Escape: 'AC',
+        Backspace: 'C',
+        '.': '.',
+    };
+
+    if (!isNaN(e.key) || keyMap[e.key]) {
+        handleInput(keyMap[e.key] || e.key);
+    }
+});
