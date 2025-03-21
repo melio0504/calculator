@@ -52,11 +52,17 @@ body {
 }
 
 .output-display {
-    overflow: hidden;
     padding-left: 5px;
+    white-space: nowrap;
+    overflow-x: auto;
+    text-align: right;
+    direction: rtl;  
 }
 
-/* Use CSS Grid here */
+.output-display::-webkit-scrollbar { 
+    display: none;
+}
+
 .calculator-keys {
     display: grid;
     gap: 1rem;
@@ -86,6 +92,26 @@ body {
 button:hover {
     border-color: #646cff;
 }
+  
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+ 
+.github-logo {
+    width: 30px;
+    height: 30px;
+}
 
 @media only screen and (max-width: 450px) {
     .calculator {
@@ -110,24 +136,4 @@ button:hover {
     .calculator-key {
         font-size: 1.5rem;
     }
-}
-  
-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    padding: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
- 
-.github-logo {
-    width: 30px;
-    height: 30px;
 }
