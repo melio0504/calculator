@@ -54,13 +54,11 @@ body {
 .output-display {
     padding-left: 5px;
     white-space: nowrap;
-    overflow-x: auto;
     text-align: right;
-    direction: rtl;  
-}
-
-.output-display::-webkit-scrollbar { 
-    display: none;
+    overflow: hidden;
+    direction: ltr;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .calculator-keys {
