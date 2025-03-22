@@ -37,6 +37,9 @@ let outputDisplay = '0';
 const display = document.querySelector('#currentDisplay');
 const buttons = document.querySelectorAll('button');
 
+const clickSound = new Audio("assets/click-sound.wav");
+clickSound.load();
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => handleInput(button.value));
 });
@@ -107,6 +110,9 @@ function handleInput(value) {
         }
     }
 
+    clickSound.currentTime = 0;
+    clickSound.play();
+    
     updateDisplay();
 }
 
