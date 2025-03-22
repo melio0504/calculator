@@ -105,6 +105,12 @@ button:active {
     transform: scale(0.95);
     border-color: #C41E3A;
 }
+
+.pressed {
+    transform: scale(0.95);
+    border-color: #C41E3A;
+}
+
   
 footer {
     position: relative;
