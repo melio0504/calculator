@@ -128,7 +128,18 @@ document.addEventListener('keydown', (e) => {
         '.': '.',
     };
 
-    if (!isNaN(e.key) || keyMap[e.key]) {
-        handleInput(keyMap[e.key] || e.key);
+    let key = keyMap[e.key] || e.key;
+
+    if (!isNaN(key) || keyMap[e.key]) {
+        handleInput(key);
+        highlightButton(key);
     }
 });
+
+function highlightButton(value) {
+    const button = Array.from(buttons).find(btn => btn.value === value);
+    if (button) {
+        button.classList.add('pressed');
+        setTimeout(() => button.classList.remove('pressed'), 150);
+    }
+}
